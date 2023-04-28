@@ -6,12 +6,12 @@ import {
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAvyi8MCFGyBVW34I-ddBUAd8kG4Kscx3E",
-    authDomain: "budgetpal-effaa.firebaseapp.com",
-    projectId: "budgetpal-effaa",
-    storageBucket: "budgetpal-effaa.appspot.com",
-    messagingSenderId: "958893727353",
-    appId: "1:958893727353:web:7cea2c79ff92ca968a7ea8"
+    apiKey: "",
+    authDomain: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: ""
 };
 
 const app = initializeApp(firebaseConfig);
