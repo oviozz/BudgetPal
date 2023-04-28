@@ -1,0 +1,99 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Receipt Search</title>
+</head>
+<body class="receipt-search">
+<div class="main-home-container main-dashboard">
+
+  <div class="side-bar-container">
+
+    <div class="main-header-container logo-for-nav">
+
+      <div class="main-heading-title">
+        <div class="first-part">
+          <h1 class="first-part-btn">Budget</h1>
+        </div>
+
+        <div class="second-part">
+          <h1 class="second-part-btn">Pal</h1>
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+    <ul class="side-tab-navigator">
+
+      <a href="dashboard.html" class="navigator-dashboard">
+        <ion-icon name="grid-outline" class="icon"></ion-icon>
+        <h3 class="item">Dashboard</h3>
+      </a>
+
+      <li class="navigator-dashboard nav_chose_sidebar">
+        <ion-icon name="receipt" class="icon"></ion-icon>
+        <h3 class="item">Receipt Search</h3>
+      </li>
+
+    </ul>
+    <a class="divider"></a>
+
+
+    <div class="navigator-dashboard logout-nav">
+      <ion-icon class="icon" name="log-out-outline"></ion-icon>
+      <h3 class="item">Logout</h3>
+    </div>
+  </div>
+
+  <div class="body-container receipt-search-body">
+
+    <div class="input-search-child">
+      <input id="receipt-search-bar" type="text" class="input-lbl text_search ftn " placeholder="Search item name">
+    </div>
+
+
+
+    <ul class="receipt-search-cards">
+
+      <!--<li class="receipt-child-card">
+
+        <div class="left-item-name">
+          <h2 class="search-item-store">Walmart</h2>
+          <p class="search-item-title">Yorkshire Wrap</p>
+        </div>
+
+        <div class="search-price-container">
+          <h2 class="search-item-price">$ 12.95</h2>
+          <p class="search-item-date">2023-04-25</p>
+        </div>
+      </li>-->
+
+
+
+    </ul>
+
+
+
+  </div>
+
+
+</div>
+
+
+<script src="user_account_auth.js" type="module"></script>
+<script src="receiptSearch.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+</html>

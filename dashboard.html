@@ -1,0 +1,247 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+    <script src="functions.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <title>BudgetPal DashBoard</title>
+</head>
+<body class="dashboard_page">
+<div class="main-home-container main-dashboard">
+
+    <div class="side-bar-container">
+
+        <div class="main-header-container logo-for-nav">
+
+            <div class="main-heading-title">
+                <div class="first-part">
+                    <h1 class="first-part-btn">Budget</h1>
+                </div>
+
+                <div class="second-part">
+                    <h1 class="second-part-btn">Pal</h1>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+        <ul class="side-tab-navigator">
+
+            <a class="navigator-dashboard nav_chose_sidebar">
+                <ion-icon name="grid" class="icon"></ion-icon>
+                <h3 class="item">Dashboard</h3>
+            </a>
+
+
+            <a href="receipt-search.html" class="navigator-dashboard">
+                <ion-icon name="receipt-outline" class="icon"></ion-icon>
+                <h3 class="item">Receipt Search</h3>
+            </a>
+
+        </ul>
+
+
+        <a class="divider"></a>
+
+        <div class="navigator-dashboard logout-nav">
+            <ion-icon class="icon" name="log-out-outline"></ion-icon>
+            <h3 class="item">Logout</h3>
+        </div>
+
+    </div>
+
+    <div class="full-body-container">
+
+        <div class="full-side-bar-container-top">
+            <div class="top-part-body">
+
+                <div class="overview-container side-body-container-css first-container">
+                    <h1 class="overview-title">Overview</h1>
+
+                    <div class="overview-child-container">
+                        <p class="budget-label">Budget</p>
+                        <!--<p class="budget-total-value purple">$400/month</p>-->
+
+                        <div class="budget-input-container">
+                            <input maxlength="15" class="input-budget-value purple" oninput="UpdateBudget(this)" onblur="this.value = this.value[0] === '$' ? `${this.value}` : `$${this.value}` " value="$400">
+                            <p class="input-budget-value purple">/month</p>
+                        </div>
+
+                    </div>
+
+                    <div class="overview-child-container">
+                        <p class="budget-label">Daily Spending Limit</p>
+                        <p class="budget-spending-limit purple">$13.33</p>
+                    </div>
+
+                    <div class="overview-child-container">
+                        <p class="budget-label">Meeting Budgeting Goals?</p>
+                        <p class="budget-checking green"><ion-icon name="checkmark"></ion-icon> Yes</p>
+                    </div>
+
+                    <div class="overview-child-container budget-reminder">
+
+                        <div class="icon-budget-reminder">
+                            <ion-icon name="alert-circle-outline"></ion-icon>
+                        </div>
+
+                        <p class="budget-reminder-error">You have less than $30 left to spend this month in order to meet your budgeting goals.</p>
+                    </div>
+
+                    <div class="overview-child-container">
+                        <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" id="edit-budget" class="budget-label">
+                            <ion-icon name="create-outline"></ion-icon>
+                            EDIT BUDGET
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="overview-container item-log-container side-body-container-css">
+
+                    <div class="item-log-upload">
+
+                        <h1 class="item-log-title">Item Log</h1>
+
+                        <button class="upload-receipt">
+                            <ion-icon name="cloud-upload-outline"></ion-icon>
+                            UPLOAD RECEIPT
+                        </button>
+
+                    </div>
+
+                    <div class="overview-child-container purple list-top_label">
+                        <p class="table-label">Date</p>
+                        <p class="table-label">Store</p>
+                        <p class="table-label">Name</p>
+                        <p class="table-label">Amount</p>
+                    </div>
+
+
+                    <ul class="item-log-lists">
+
+                        <!--<li class="log-items">
+                            <p class="items-date">4/21/2023</p>
+                            <p class="items-name">Avocado Toast</p>
+                            <p class="items-price">$7.0350</p>
+                        </li>-->
+
+
+                    </ul>
+
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="full-side-bar-container-bottom">
+
+            <div class="overview-container side-body-container-css summary-container">
+
+                <div class="summary-header">
+                    <h1 class="summer-title">Summary</h1>
+
+                    <div class="data-summary-filter">
+
+                        <ul class="data-filter-buttons">
+
+                            <li class="weekly">
+                                <button class="data-filter weekly-btn choose-graph">WEEK</button>
+                            </li>
+                            <li class="monthly">
+                                <button class="data-filter monthly-btn">MONTH</button>
+                            </li>
+                            <li class="yearly">
+                                <button class="data-filter yearly-btn">YEAR</button>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <p class="weekly-total bld">Weekly Total:</p>
+                <p class="daily-average bld">Daily Average:</p>
+
+                <canvas class="chart-display" id="myChart" style="width:100%;max-width:1100px;"></canvas>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="progress-bar">
+    <div class="custom-loader"></div>
+</div>
+
+<div class="uploader-overlay">
+    <div class="uploader-receipt-container">
+
+        <ion-icon name="close-circle-outline" class="uploader-close-button"></ion-icon>
+
+        <div class="uploader-receipt-child">
+            <h1 class="overview-title">Upload Receipt</h1>
+
+            <br>
+            <div class="company-name-div">
+                <label class="company-label">Store name:</label>
+                <input  type="text" id="store-name-value" class="receipt-store-val" placeholder="Ex: Walmart">
+
+            </div>
+            <br>
+
+            <div class="uploader-drag">
+
+                <div class="drag-label">
+
+                    <label class="drag-title" for="receipt_file">
+                        Drag and drop, or <span class="highlight">browse your files</span>.
+                    </label>
+                    <label class="drag-title" style="font-size: 1rem">Supports PNG, JPG, JPEG.</label>
+
+                </div>
+
+                <input class="img_file" type="file" id="receipt_file" name="receipt_file" accept=".jpg,.jpeg,.png" style="display: none;">
+                <div id="file-name"></div>
+
+            </div>
+
+
+            <div class="next-button">
+
+                <div class="upload-next-button">
+                    <button class="next_upload_button">Upload</button>
+                    <p class="error-msg-upload">File/Receipt has not been uploaded!</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="user_account_auth.js" type="module"></script>
+<script src="dashboard.js" type="module"></script>
+<script src="uploader_img.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+</html>

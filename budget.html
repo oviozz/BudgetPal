@@ -1,0 +1,108 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>BudgetPal DashBoard</title>
+</head>
+<body class="budget_page">
+<div class="main-home-container main-dashboard">
+
+    <div class="side-bar-container">
+
+        <div class="main-header-container logo-for-nav">
+
+            <div class="main-heading-title">
+                <div class="first-part">
+                    <h1 class="first-part-btn">Budget</h1>
+                </div>
+
+                <div class="second-part">
+                    <h1 class="second-part-btn">Pal</h1>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+        <ul class="side-tab-navigator">
+
+            <a href="dashboard.html" class="navigator-dashboard">
+                <ion-icon name="grid-outline" class="icon"></ion-icon>
+                <h3 class="item">Dashboard</h3>
+            </a>
+
+            <li class="navigator-dashboard nav_chose_sidebar">
+                <ion-icon name="cash" class="icon"></ion-icon>
+                <h3 class="item">Budget</h3>
+            </li>
+
+            <a href="receipt-search.html" class="navigator-dashboard">
+                <ion-icon name="receipt-outline" class="icon"></ion-icon>
+                <h3 class="item">Receipt Search</h3>
+            </a>
+
+        </ul>
+
+        <a href="receipt.html" class="navigator-dashboard profile-nav">
+            <ion-icon name="person-outline"></ion-icon>
+            <h3 class="item">Receipt Images</h3>
+        </a>
+
+        <div class="navigator-dashboard logout-nav">
+            <ion-icon class="icon" name="log-out-outline"></ion-icon>
+            <h3 class="item">Logout</h3>
+        </div>
+
+    </div>
+
+    <div class="body-side-container">
+
+        <div class="left-side-education-goals">
+
+            <div class="budget-tile">
+                <h1 class="budget-title-left">Edit Budgeting Goals</h1>
+            </div>
+
+            <label class="input-label">INCOME ($ / MONTH)</label>
+            <input class="user-income-value input-lbl" type="text" placeholder="Ex: 500">
+
+
+            <label class="input-label">SPENDING BUDGET ($/MONTH)</label>
+
+            <div class="two-btn input-lbl">
+                <input class="first" type="text"  placeholder="Ex: 400">
+                <input class="second" type="number"  placeholder="80%">
+
+            </div>
+
+            <button class="budget-submit">Save</button>
+
+
+
+        </div>
+
+        <div class="right-side-img">
+            <img class="ride-side-tip-img" src="images/image.png">
+        </div>
+
+
+    </div>
+
+
+</div>
+
+<script src="user_account_auth.js" type="module"></script>
+<script src="functions.js" type="module"></script>
+</body>
+</html>
